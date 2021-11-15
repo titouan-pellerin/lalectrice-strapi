@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "editeurs",
+  "info": {
+    "name": "Éditeur",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nom",
+      "required": true
+    },
+    "lien": {
+      "type": "string",
+      "required": false
+    },
+    "livres": {
+      "via": "editeur",
+      "collection": "livre"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

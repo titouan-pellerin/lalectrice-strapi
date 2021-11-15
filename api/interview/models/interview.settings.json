@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "interviews",
+  "info": {
+    "name": "Interview",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contenu": {
+      "type": "richtext",
+      "required": true
+    },
+    "auteur": {
+      "via": "interviews",
+      "model": "auteur"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

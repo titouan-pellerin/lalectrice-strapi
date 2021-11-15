@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "auteurs",
+  "info": {
+    "name": "Auteur",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "traducteur": {
+      "type": "boolean",
+      "default": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nom"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text"
+    },
+    "biographie": {
+      "type": "text"
+    },
+    "nationalite": {
+      "type": "nationality",
+      "default": "FR",
+      "columnType": "CHAR(2)"
+    },
+    "livres": {
+      "via": "auteurs",
+      "collection": "livre"
+    },
+    "interviews": {
+      "via": "auteur",
+      "collection": "interview"
+    }
+  }
+}

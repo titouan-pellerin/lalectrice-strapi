@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "livres",
+  "info": {
+    "name": "Livre",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre",
+      "required": false
+    },
+    "auteurs": {
+      "via": "livres",
+      "collection": "auteur",
+      "dominant": true
+    },
+    "pages": {
+      "type": "integer",
+      "required": false
+    },
+    "isbn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "couverture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "collection_livre": {
+      "model": "collection",
+      "via": "livres"
+    },
+    "editeur": {
+      "via": "livres",
+      "model": "editeur"
+    },
+    "chronique": {
+      "via": "livre",
+      "model": "chronique"
+    },
+    "genres": {
+      "via": "livres",
+      "collection": "genre",
+      "dominant": true
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "coeur": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

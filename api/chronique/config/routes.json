@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/chroniques",
+      "handler": "chronique.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/chroniques/count",
+      "handler": "chronique.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/chroniques/:id",
+      "handler": "chronique.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chroniques",
+      "handler": "chronique.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/chroniques/:id",
+      "handler": "chronique.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/chroniques/:id",
+      "handler": "chronique.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

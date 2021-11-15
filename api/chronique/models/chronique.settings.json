@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chroniques",
+  "info": {
+    "name": "Chronique",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contenu": {
+      "type": "richtext",
+      "required": true
+    },
+    "livre": {
+      "via": "chronique",
+      "model": "livre"
+    },
+    "epinglee": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "publication": {
+      "type": "date"
+    }
+  }
+}

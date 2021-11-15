@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/atelier-d-ecritures",
+      "handler": "atelier-d-ecriture.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/atelier-d-ecritures/count",
+      "handler": "atelier-d-ecriture.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/atelier-d-ecritures/:id",
+      "handler": "atelier-d-ecriture.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/atelier-d-ecritures",
+      "handler": "atelier-d-ecriture.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/atelier-d-ecritures/:id",
+      "handler": "atelier-d-ecriture.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/atelier-d-ecritures/:id",
+      "handler": "atelier-d-ecriture.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
