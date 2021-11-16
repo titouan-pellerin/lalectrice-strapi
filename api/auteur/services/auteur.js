@@ -140,21 +140,29 @@ const bnfData = async (author) => {
         const lastname = personNameArray[0]["mxc:subfield"].filter(
           (subfield) => subfield.$.code == "a"
         )[0]._;
-        const firstname = personNameArray[0]["mxc:subfield"].filter(
+        const firstnameArray = personNameArray[0]["mxc:subfield"].filter(
           (subfield) => subfield.$.code == "b"
-        )[0]._;
+        );
+        let firstname = "";
+        if (firstnameArray.length > 0) firstname = firstnameArray[0]._;
 
         personName = firstname + " " + lastname;
+        personName = personName.trim();
       }
       if (collectivityNameArray.length > 0) {
         const collectivityFirstName = collectivityNameArray[0][
           "mxc:subfield"
         ].filter((subfield) => subfield.$.code == "a")[0]._;
-        const collectivitySubName = collectivityNameArray[0][
+        const collectivitySubNameArray = collectivityNameArray[0][
           "mxc:subfield"
-        ].filter((subfield) => subfield.$.code == "b")[0]._;
+        ].filter((subfield) => subfield.$.code == "b");
+
+        let collectivitySubName = "";
+        if (collectivitySubNameArray.length > 0)
+          collectivitySubName = collectivitySubNameArray[0]._;
 
         collectivityName = collectivityFirstName + " " + collectivitySubName;
+        collectivityName = collectivityName.trim();
       }
 
       name = personName ? personName : collectivityName;

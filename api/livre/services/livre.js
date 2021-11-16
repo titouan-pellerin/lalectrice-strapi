@@ -31,7 +31,7 @@ const googleBooksData = async (isbn) => {
 
   try {
     const { data } = await axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&key=AIzaSyBQi_5Mnx0fyZwjlVMsXCAWx9UENSXj7ew`
+      `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&key=${process.env.GOOGLE_API_KEY}`
     );
     title = data.items[0].volumeInfo.title;
     publisher = data.items[0].volumeInfo.publisher;

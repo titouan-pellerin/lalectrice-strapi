@@ -78,62 +78,78 @@ module.exports = {
     async afterCreate(result, data) {
       if (bookData.authors) {
         await bookData.authors.forEach(async (author) => {
-          const authorData = await strapi.services.auteur.findAuthor(author);
-          if (authorData) {
-            const strapiAuthor = await strapi
-              .query("auteur")
-              .findOne({ nom: authorData.name });
-            if (!strapiAuthor) {
-              await strapi.query("auteur").create({
-                nom: authorData.name,
-                biographie: authorData.biography,
-                nationalite: authorData.nationality,
-                description: authorData.description,
-                livres: [result.id],
-              });
-            } else {
-              strapi
+          try {
+            const authorData = await strapi.services.auteur.findAuthor(author);
+            if (authorData.name) {
+              const strapiAuthor = await strapi
                 .query("auteur")
-                .update(
-                  { id: strapiAuthor.id },
-                  { livres: [...strapiAuthor.livres, result.id] }
-                );
+                .findOne({ nom: authorData.name });
+              if (!strapiAuthor) {
+                await strapi.query("auteur").create({
+                  nom: authorData.name,
+                  biographie: authorData.biography,
+                  nationalite: authorData.nationality,
+                  description: authorData.description,
+                  livres: [result.id],
+                });
+              } else {
+                strapi
+                  .query("auteur")
+                  .update(
+                    { id: strapiAuthor.id },
+                    { livres: [...strapiAuthor.livres, result.id] }
+                  );
+              }
+            } else {
+              throw strapi.errors.badRequest(
+                "Impossible de trouver l'auteur :" + JSON.stringify(author)
+              );
             }
+          } catch (err) {
+            console.error(err);
           }
         });
       }
 
       if (bookData.translators) {
         await bookData.translators.forEach(async (translator) => {
-          const translatorData = await strapi.services.auteur.findAuthor(
-            translator
-          );
-          if (translatorData) {
-            const strapiTranslator = await strapi
-              .query("auteur")
-              .findOne({ nom: translatorData.name });
-            if (!strapiTranslator) {
-              const biographie = translatorData.bio
-                ? typeof translatorData.bio == "string"
-                  ? translatorData.bio
-                  : translatorData.bio.value
-                  ? translatorData.bio.value
-                  : ""
-                : "";
-              await strapi.query("auteur").create({
-                nom: translatorData.name,
-                biographie,
-                traducteur: true,
-                livres: [result.id],
-              });
-            } else {
-              strapi
+          try {
+            const translatorData = await strapi.services.auteur.findAuthor(
+              translator
+            );
+            if (translatorData.name) {
+              const strapiTranslator = await strapi
                 .query("auteur")
-                .update(
-                  { id: strapiTranslator.id },
-                  { livres: [...strapiTranslator.livres, result.id] }
-                );
+                .findOne({ nom: translatorData.name });
+              if (!strapiTranslator) {
+                const biographie = translatorData.bio
+                  ? typeof translatorData.bio == "string"
+                    ? translatorData.bio
+                    : translatorData.bio.value
+                    ? translatorData.bio.value
+                    : ""
+                  : "";
+                await strapi.query("auteur").create({
+                  nom: translatorData.name,
+                  biographie,
+                  traducteur: true,
+                  livres: [result.id],
+                });
+              } else {
+                strapi
+                  .query("auteur")
+                  .update(
+                    { id: strapiTranslator.id },
+                    { livres: [...strapiTranslator.livres, result.id] }
+                  );
+              }
+            } else {
+              throw strapi.errors.badRequest(
+                "Impossible de trouver l'auteur :" + JSON.stringify(translator)
+              );
             }
+          } catch (err) {
+            console.error(err);
           }
         });
       }
