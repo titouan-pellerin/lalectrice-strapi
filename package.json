@@ -9,13 +9,13 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
+  },
   "dependencies": {
     "knex": "0.21.18",
-    "mysql": "^2.18.1",
     "pg": "^8.7.1",
     "pg-connection-string": "^2.5.0",
-    "sqlite3": "5.0.0",
     "strapi": "3.6.8",
     "strapi-admin": "3.6.8",
     "strapi-connector-bookshelf": "3.6.8",
