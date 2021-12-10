@@ -518,7 +518,8 @@
         "required": [
           "id",
           "contenu",
-          "photo"
+          "photo",
+          "date"
         ],
         "properties": {
           "id": {
@@ -643,12 +644,17 @@
                 "type": "string"
               }
             }
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
           }
         }
       },
       "NewInterview": {
         "required": [
-          "contenu"
+          "contenu",
+          "date"
         ],
         "properties": {
           "contenu": {
@@ -656,6 +662,10 @@
           },
           "auteur": {
             "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
           },
           "created_by": {
             "type": "string"

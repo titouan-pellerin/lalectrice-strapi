@@ -29,6 +29,10 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "date": {
+      "type": "date",
+      "required": true
     }
   }
 }

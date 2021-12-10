@@ -681,7 +681,8 @@
               "required": [
                 "id",
                 "contenu",
-                "photo"
+                "photo",
+                "date"
               ],
               "properties": {
                 "id": {
@@ -694,6 +695,9 @@
                   "type": "string"
                 },
                 "photo": {
+                  "type": "string"
+                },
+                "date": {
                   "type": "string"
                 },
                 "created_by": {
