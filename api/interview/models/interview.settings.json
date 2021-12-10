@@ -12,6 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "titre": {
+      "type": "string",
+      "required": false
+    },
     "contenu": {
       "type": "richtext",
       "required": true
