@@ -41,7 +41,7 @@
       "type": "text"
     },
     "nationalite": {
-      "type": "nationality",
+      "type": "country",
       "default": "FR",
       "columnType": "CHAR(2)"
     },
