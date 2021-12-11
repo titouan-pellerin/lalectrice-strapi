@@ -559,7 +559,7 @@
                   "type": "string"
                 },
                 "nationalite": {
-                  "type": "nationality"
+                  "type": "country"
                 },
                 "livres": {
                   "type": "array",

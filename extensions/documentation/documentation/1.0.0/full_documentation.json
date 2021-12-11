@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/10/2021 10:34:01 PM"
+    "x-generation-date": "12/11/2021 5:13:54 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6504,7 +6504,7 @@
             "type": "string"
           },
           "nationalite": {
-            "type": "nationality",
+            "type": "country",
             "default": "FR"
           },
           "livres": {
@@ -6578,11 +6578,13 @@
               "required": [
                 "id",
                 "contenu",
-                "photo",
-                "date"
+                "photo"
               ],
               "properties": {
                 "id": {
+                  "type": "string"
+                },
+                "titre": {
                   "type": "string"
                 },
                 "contenu": {
@@ -6596,6 +6598,9 @@
                 },
                 "date": {
                   "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
                 },
                 "created_by": {
                   "type": "string"
@@ -6630,7 +6635,7 @@
             "type": "string"
           },
           "nationalite": {
-            "type": "nationality",
+            "type": "country",
             "default": "FR"
           },
           "livres": {
@@ -7174,11 +7179,13 @@
         "required": [
           "id",
           "contenu",
-          "photo",
-          "date"
+          "photo"
         ],
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "titre": {
             "type": "string"
           },
           "contenu": {
@@ -7212,7 +7219,7 @@
                 "type": "string"
               },
               "nationalite": {
-                "type": "nationality"
+                "type": "country"
               },
               "livres": {
                 "type": "array",
@@ -7304,15 +7311,20 @@
           "date": {
             "type": "string",
             "format": "date"
+          },
+          "slug": {
+            "type": "uid"
           }
         }
       },
       "NewInterview": {
         "required": [
-          "contenu",
-          "date"
+          "contenu"
         ],
         "properties": {
+          "titre": {
+            "type": "string"
+          },
           "contenu": {
             "type": "string"
           },
@@ -7322,6 +7334,9 @@
           "date": {
             "type": "string",
             "format": "date"
+          },
+          "slug": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"
@@ -7376,7 +7391,7 @@
                   "type": "string"
                 },
                 "nationalite": {
-                  "type": "nationality"
+                  "type": "country"
                 },
                 "livres": {
                   "type": "array",

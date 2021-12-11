@@ -607,7 +607,7 @@
             "type": "string"
           },
           "nationalite": {
-            "type": "nationality",
+            "type": "country",
             "default": "FR"
           },
           "livres": {
@@ -681,11 +681,13 @@
               "required": [
                 "id",
                 "contenu",
-                "photo",
-                "date"
+                "photo"
               ],
               "properties": {
                 "id": {
+                  "type": "string"
+                },
+                "titre": {
                   "type": "string"
                 },
                 "contenu": {
@@ -699,6 +701,9 @@
                 },
                 "date": {
                   "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
                 },
                 "created_by": {
                   "type": "string"
@@ -733,7 +738,7 @@
             "type": "string"
           },
           "nationalite": {
-            "type": "nationality",
+            "type": "country",
             "default": "FR"
           },
           "livres": {

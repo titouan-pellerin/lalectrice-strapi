@@ -37,6 +37,11 @@
     "date": {
       "type": "date",
       "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre",
+      "required": false
     }
   }
 }
