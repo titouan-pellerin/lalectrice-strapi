@@ -126,8 +126,8 @@ module.exports = {
                   ? typeof translatorData.bio == "string"
                     ? translatorData.bio
                     : translatorData.bio.value
-                    ? translatorData.bio.value
-                    : ""
+                      ? translatorData.bio.value
+                      : ""
                   : "";
                 await strapi.query("auteur").create({
                   nom: translatorData.name,
