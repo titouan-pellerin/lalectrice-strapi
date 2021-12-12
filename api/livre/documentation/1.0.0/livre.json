@@ -746,6 +746,9 @@
               "publication": {
                 "type": "string"
               },
+              "titre": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

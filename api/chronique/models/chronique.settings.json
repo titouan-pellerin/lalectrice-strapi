@@ -27,6 +27,9 @@
     },
     "publication": {
       "type": "date"
+    },
+    "titre": {
+      "type": "string"
     }
   }
 }
