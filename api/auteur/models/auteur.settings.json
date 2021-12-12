@@ -50,7 +50,7 @@
       "collection": "livre"
     },
     "interviews": {
-      "via": "auteur",
+      "via": "auteurs",
       "collection": "interview"
     }
   }

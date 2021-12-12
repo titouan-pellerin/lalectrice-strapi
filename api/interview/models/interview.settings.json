@@ -20,9 +20,10 @@
       "type": "richtext",
       "required": true
     },
-    "auteur": {
+    "auteurs": {
+      "collection": "auteur",
       "via": "interviews",
-      "model": "auteur"
+      "dominant": true
     },
     "photo": {
       "model": "file",
@@ -42,6 +43,9 @@
       "type": "uid",
       "targetField": "titre",
       "required": false
+    },
+    "livre": {
+      "model": "livre"
     }
   }
 }

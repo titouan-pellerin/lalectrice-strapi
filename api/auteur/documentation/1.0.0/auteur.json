@@ -693,8 +693,11 @@
                 "contenu": {
                   "type": "string"
                 },
-                "auteur": {
-                  "type": "string"
+                "auteurs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "photo": {
                   "type": "string"
@@ -704,6 +707,9 @@
                 },
                 "slug": {
                   "type": "uid"
+                },
+                "livre": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

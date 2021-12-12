@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/11/2021 5:13:54 PM"
+    "x-generation-date": "12/12/2021 1:02:30 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6590,8 +6590,11 @@
                 "contenu": {
                   "type": "string"
                 },
-                "auteur": {
-                  "type": "string"
+                "auteurs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "photo": {
                   "type": "string"
@@ -6601,6 +6604,9 @@
                 },
                 "slug": {
                   "type": "uid"
+                },
+                "livre": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -7191,53 +7197,56 @@
           "contenu": {
             "type": "string"
           },
-          "auteur": {
-            "required": [
-              "id",
-              "nom"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nom": {
-                "type": "string"
-              },
-              "traducteur": {
-                "type": "boolean"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "photo": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "biographie": {
-                "type": "string"
-              },
-              "nationalite": {
-                "type": "country"
-              },
-              "livres": {
-                "type": "array",
-                "items": {
+          "auteurs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "nom"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "nom": {
+                  "type": "string"
+                },
+                "traducteur": {
+                  "type": "boolean"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "photo": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "biographie": {
+                  "type": "string"
+                },
+                "nationalite": {
+                  "type": "country"
+                },
+                "livres": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "interviews": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "interviews": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -7314,6 +7323,68 @@
           },
           "slug": {
             "type": "uid"
+          },
+          "livre": {
+            "required": [
+              "id",
+              "isbn"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "titre": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "auteurs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "pages": {
+                "type": "integer"
+              },
+              "isbn": {
+                "type": "string"
+              },
+              "couverture": {
+                "type": "string"
+              },
+              "collection_livre": {
+                "type": "string"
+              },
+              "editeur": {
+                "type": "string"
+              },
+              "chronique": {
+                "type": "string"
+              },
+              "genres": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "date": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "coeur": {
+                "type": "boolean"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -7328,8 +7399,11 @@
           "contenu": {
             "type": "string"
           },
-          "auteur": {
-            "type": "string"
+          "auteurs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "date": {
             "type": "string",
@@ -7337,6 +7411,9 @@
           },
           "slug": {
             "type": "uid"
+          },
+          "livre": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
